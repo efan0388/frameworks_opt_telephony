@@ -33,6 +33,8 @@ import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.net.NetworkCapabilities;
 import android.net.NetworkConfig;
+import android.net.NetworkFactory;
+import android.net.NetworkRequest;
 import android.net.NetworkUtils;
 import android.net.ProxyInfo;
 import android.net.Uri;
@@ -2711,14 +2713,6 @@ public final class DcTracker extends DcTrackerBase {
                 //May new Network allow setupData, so try it here
                 setupDataOnConnectableApns(Phone.REASON_NW_TYPE_CHANGED,
                         RetryFailures.ONLY_ON_CHANGE);
-                break;
-
-            case DctConstants.CMD_CLEAR_PROVISIONING_SPINNER:
-                // Check message sender intended to clear the current spinner.
-                if (mProvisioningSpinner == msg.obj) {
-                    mProvisioningSpinner.dismiss();
-                    mProvisioningSpinner = null;
-                }
                 break;
 
             case DctConstants.CMD_CLEAR_PROVISIONING_SPINNER:
