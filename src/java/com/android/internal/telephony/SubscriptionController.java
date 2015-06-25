@@ -633,10 +633,6 @@ public class SubscriptionController extends ISub.Stub {
                     value.put(SubscriptionManager.DISPLAY_NAME, nameToSet);
                 }
 
-                if (!TextUtils.isEmpty(simCarrierName)) {
-                    value.put(SubscriptionManager.CARRIER_NAME, simCarrierName);
-                }
-
                 if (value.size() > 0) {
                     resolver.update(SubscriptionManager.CONTENT_URI, value,
                             SubscriptionManager.UNIQUE_KEY_SUBSCRIPTION_ID +
